@@ -1310,7 +1310,11 @@
     
                 let opacity = 1;
                 if (i < cards.length - 1) {
-                    const x = t - i;
+                    // Каждая карточка исчезает, только когда появляется следующая после следующей
+                    // (i -> скрывается при появлении i+2).
+                    const startSegment = Math.min(i + 1, phases - 1);
+                    const x = t - startSegment;
+
                     if (x <= 0) {
                         opacity = 1;
                     } else if (x >= 1) {
