@@ -1,0 +1,54 @@
+@use '../variables' as *;
+.site-header {
+  background: #f8f8f8;
+  padding: 14px 0;
+
+  .header-inner {
+    max-width: $container;
+    margin: 0 auto;
+    padding: 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .header-left img {
+    height: 46px;
+    width: auto;
+    display: block;
+  }
+
+  .header-menu .main-nav {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+
+    li a {
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #111;
+      transition: color .2s;
+    }
+
+    li a:hover {
+      color: #0057ff;
+    }
+  }
+
+  .header-right .btn {
+    background: #003dff;
+    color: white;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background .2s;
+
+    &:hover {
+      background: #002bcc;
+    }
+  }
+}

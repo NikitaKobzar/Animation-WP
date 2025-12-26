@@ -1,0 +1,15 @@
+@use '../variables' as *;
+
+.why-pro{
+  h3{margin-bottom:18px;}
+  .specs-grid{
+    display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px; align-content:start;
+    > *{background:#fff; border:1px solid var(--c-line); border-radius:18px; padding:14px; text-align:center; box-shadow:$shadow;}
+    h4{margin:0; font-size:20px;}
+    p{margin:6px 0 0; color:var(--c-muted);}
+  }
+  .wp-block-image{aspect-ratio: 4/3; object-fit:cover;}
+  @include mq($bp-l){ .specs-grid{grid-template-columns:repeat(2,1fr);} }
+  @include mq($bp-m){ .specs-grid{grid-template-columns:1fr;} }
+}

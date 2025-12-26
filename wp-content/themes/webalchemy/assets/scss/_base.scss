@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+html,body{background:var(--c-bg); color:var(--c-text); font-family:$ff-base; font-size:16px; line-height:1.5;}
+img{max-width:100%; height:auto; display:block;}
+.alignwide{max-width:min(calc(#{$container} + 2*#{$gutter}), 100% - 2rem); margin-inline:auto;}
+.alignfull{width:100vw; margin-left:50%; transform:translateX(-50%);}
+
+.wp-block-columns{column-gap:clamp(20px,2.8vw,40px);}
+.wp-block-image img{border-radius:$radius; box-shadow:none;}
+
+.wa-section{padding-block:clamp(24px,4vw,64px);}
+.wa-section__inner{max-width:$container; margin:0 auto;}
+
+.stock{color:var(--c-green); font-weight:600;}
+hr{border:none; border-top:1px solid var(--c-line);}
+
+/* Лёгкий baseline для секций с data-wa-anim */
+.wa-section[data-wa-anim]{opacity:1; transform:none; transition:opacity .5s ease, transform .6s ease;}
+.wa-anim-fade-in   {opacity:0; transform:translateY(8px);}
+.wa-anim-fade-up   {opacity:0; transform:translateY(18px);}
+.wa-anim-parallax  {will-change:transform;}
+.wa-anim-sticky-scroll{position:relative;}
+.wa-anim-horizontal-snap{scroll-snap-type:x mandatory; overflow-x:auto;}
+/* Когда твой js добавит класс .is-inview — секция проявится */
+.is-inview.wa-anim-fade-in,
+.is-inview.wa-anim-fade-up{opacity:1; transform:none;}
+
+@media (max-width: 900px) {
+  .wa-section{min-height: 100vh;}
+  .wa-section__inner{max-width:90%;}
+}

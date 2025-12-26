@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "wa/product-cards",
+  "title": "WA Product Cards",
+  "icon": "index-card",
+  "category": "widgets",
+  "attributes": {
+    "animation": { "type": "string", "default": "" },
+    "extraClass": { "type": "string", "default": "" },
+    "animTarget": { "type": "string", "default": "" }
+  },
+  "editorScript": "wa-product-cards-editor",
+  "supports": { "html": false }
+}

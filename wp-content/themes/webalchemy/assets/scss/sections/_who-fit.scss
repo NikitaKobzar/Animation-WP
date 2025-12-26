@@ -1,0 +1,11 @@
+@use '../variables' as *;
+
+.who-fit{
+  h2{text-align:center; margin-bottom:28px;}
+  .wp-block-columns{align-items:stretch;}
+  .wp-block-image{border-radius:$radius; overflow:hidden;}
+  p{font-size:18px;}
+  @include mq($bp-m){
+    .wp-block-columns{flex-direction:column; gap:20px;}
+  }
+}

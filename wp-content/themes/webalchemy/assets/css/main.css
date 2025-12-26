@@ -1,0 +1,1062 @@
+/* Базовый набор: только woff2, без лишних форматов */
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('../fonts/proximanova/ProximaNovaRegular.woff2') format('woff2'),
+         url('../fonts/proximanova/ProximaNovaRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('../fonts/proximanova/ProximaNovaBold.woff2') format('woff2'),
+         url('../fonts/proximanova/ProximaNovaBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Если хочешь Black как 800 */
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('../fonts/proximanova/ProximaNovaBlack.woff2') format('woff2'),
+         url('../fonts/proximanova/ProximaNovaBlack.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Глобальный стек: ProximaNova → системные */
+
+body {
+    font-family: 'ProximaNova', Arial, sans-serif!important;
+}
+
+html.wa-scroll-locked,
+body.wa-scroll-locked {
+    overflow: hidden;
+    touch-action: none;
+}
+
+.wa-quiz-option.is-checked {
+    outline: 2px solid #2c7be5;
+    border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  body,html {
+      overflow-x: hidden;
+  }
+}
+
+@media (max-width: 1024px) {
+    .wa-hcards-item .zigzag-row {
+        min-height: 500px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        flex-direction: initial !important;
+    }
+    .wa-hcards-item .zigzag-row.reverse{
+        flex-direction: column-reverse !important;
+    }
+    .wa-hcards-inner .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+        flex-basis: auto !important;
+        min-height: 415px;
+        width: 100%;
+    }
+    .wa-hcards-inner .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:has(p),
+    .wa-hcards-inner .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:has(hr) {
+        min-height: 300px;
+    }
+}
+
+.wp-block-column.wa-hero-right.is-layout-flow.wp-block-column-is-layout-flow p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.wp-block-column.wa-hero-right.is-layout-flow.wp-block-column-is-layout-flow h3 {
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+.wp-block-column.wa-hero-right h3 + p {
+    display: inline-flex;
+    align-items: baseline; /* чтобы цифры и текст красиво выровнялись */
+    gap: 6px; /* настроить под дизайн */
+}
+
+.wp-block-column.wa-hero-right h3 {
+    display: inline-block;
+    margin: 0;
+}
+
+.wp-block-column.wa-hero-right h3 + p {
+    margin: 0 20px;
+    font-weight: 700;
+    color: #3bb828;
+    font-size: 26px;
+}
+
+
+.zigzag-mob{
+    display: none!important;
+}
+
+@media (max-width: 640px) {
+  .zigzag-mob{
+    display: block!important;
+  }
+  
+  .not-mobile{
+    display: none!important;
+  }
+}
+button.wa-opt:nth-child(2) {
+    border-color: blue;
+}
+@media (max-width: 1024px) {
+    .wa-hcards-wrapper .wa-hcards-inner .wa-hcards-track .wa-hcards-item .wp-block-columns {
+        max-width: 90vw;
+        padding: 0;
+    }
+    .wa-hcards-item {
+        padding: 0 5px !important;
+        max-width: 90vw;
+    }
+    .wa-hcards-wrapper .wa-hcards-inner .wa-hcards-track {
+        padding-inline: 0;
+    }
+    .wa-hcards-wrapper .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+        flex-basis: 100% !important;
+        border-radius: 10px;
+    }
+    /* Если внутри НЕТ p */
+    .wa-hcards-wrapper 
+        .wp-block-columns:not(.is-not-stacked-on-mobile)
+        > .wp-block-column:not(:has(p)) {
+        min-height: 75vw;
+    }
+    
+    /* Если внутри ЕСТЬ p */
+    .wa-hcards-wrapper 
+        .wp-block-columns:not(.is-not-stacked-on-mobile)
+        > .wp-block-column:has(p),
+    .wa-hcards-wrapper 
+        .wp-block-columns:not(.is-not-stacked-on-mobile)
+        > .wp-block-column:has(hr){
+        min-height: 0;
+    }
+
+    .wa-hcards-wrapper .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:has(p) {
+        background: white;
+    }
+    .wa-hcards-wrapper .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column hr {
+        color: transparent;
+    }
+    .wa-hcards-wrapper .wa-hcards-inner .wa-hcards-track .wa-hcards-item:first-child {
+        margin-left: 10px;
+    }
+}
+
+
+    
+.wa-hero-right h2 {
+    font-size: 50px;
+    line-height: 60px;
+    text-align: left;
+    margin: 0;
+}
+
+.wa-hero-fold {
+    padding-top: 100px;
+}
+
+.wa-hero > div {
+    align-content: center;
+}
+
+.has-vivid-cyan-blue-background-color {
+    background: #0311f5 !important;
+}
+
+.wa-section {
+    padding-block: clamp(24px, 4vw, 44px);
+}
+
+.wa-hcards-inner {
+    height: auto;
+}
+
+.wa-section.wa-hero-fold {
+    min-height: inherit;
+}
+
+h2.wp-block-heading strong {
+    font-weight: 500 !important;
+}
+
+section.wa-section.wa-zigzag:not(.wa-hcards-wrapper) p {
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+.wa-opt:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, .15);
+    background: transparent;
+    cursor: alias;
+}
+
+.wp-block-embed iframe {
+    width: 100%;
+}
+
+.wa-contact-top h2 {
+    text-align: left;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+.wa-contact-top p {
+    text-align: left;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.wa-contact-info a {
+    font-size: 22px;
+    word-spacing: -4px;
+    line-height: 30px;
+    color: #5e5e5e;
+    text-shadow: 0 0 #7e7e7e;
+}
+
+.wa-contact-info p {
+    font-size: 20px;
+    line-height: 30px;
+    color: #5e5e5e;
+    margin: 0;
+}
+
+.site-header .header-menu .main-nav {
+    padding: 0;
+}
+
+.wa-contact-card > div {
+    width: 90%;
+}
+
+/*.wa-slider .swiper-wrapper {*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.wa-slider .swiper-slide {*/
+/*    width: auto !important;*/
+/*    flex: 0 0 auto !important;*/
+/*}*/
+
+/* контейнер слайдера */
+.wa-slider .swiper {
+    width: 100%;
+    overflow: hidden; /* важно! обрезаем всё, что шире внутри колонки */
+}
+
+/* стандартное поведение обёртки и слайдов */
+.wa-slider .swiper-wrapper {
+    display: flex;
+}
+
+.wa-slider .swiper-slide {
+    flex-shrink: 0;
+}
+
+/* картинки во весь слайд */
+.wa-slider .swiper-slide img {
+    display: block;
+    width: 60%;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .wa-slider .swiper-slide img {
+        width: 100%;
+    }
+}
+.wa-fp h2 {
+    line-height: 60px;
+    margin: 0;
+}
+
+.site-header {
+    padding: 18px 0;
+    width: 100%;
+}
+
+.wa-fp-right{
+    position: sticky;
+    top: 105px;
+    height: max-content;
+    align-self: start;
+}
+
+@media (min-width: 900px) {
+    .wa-section__inner {
+        max-width: min(1440px, 95%);
+    }
+}
+
+.wa-anim-horizontal-cards{
+    overflow-x: hidden;
+}
+/* обёртка секции */
+.wa-hcards-wrapper {
+    padding-block: clamp(24px, 4vw, 40px);
+}
+
+/* липкий контейнер (если нужно – можешь закреплять по макету) */
+.wa-hcards-inner {
+    position: relative;
+    overflow: visible;
+}
+
+/* трек */
+.wa-hcards-track {
+    display: flex;
+    align-items: stretch;
+}
+
+/* элемент трека */
+.wa-hcards-item {
+    flex: 0 0 auto;
+    padding-inline: clamp(8px, 1.5vw, 16px);
+}
+
+/* сама "карточка" (любой блок внутри item-а) */
+.wa-hcards-item > * {
+    border-radius: 32px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.26);
+}
+
+@media (max-width: 1024px) {
+    .wa-hcards-item > * {
+        border-radius: 32px;
+        overflow: hidden;
+        background: transparent;
+        box-shadow: none;
+    }
+    
+    .wa-hcards-item p {
+        background: #ffffff;
+    }
+}
+
+/* картинки внутри карточек */
+.wa-hcards-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* если в карточке есть текстовый блок под картинкой */
+.wa-hcards-item .wa-card-body {
+    padding: clamp(16px, 2vw, 24px);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* небольшой акцент при наведении (не трогаем transform, чтобы не конфликтовать со стеком) */
+@media (hover:hover) {
+    .wa-hcards-item > * {
+        transition: box-shadow 0.25s ease, filter 0.25s ease;
+    }
+    .wa-hcards-item:hover > * {
+        box-shadow: 0 24px 55px rgba(0, 0, 0, 0.26);
+        filter: brightness(1.02);
+    }
+}
+
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY & LAYOUT
+   ========================================================================== */
+
+/* крупные экраны чуть мягче */
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 42px;
+    line-height: 54px;
+  }
+
+  .wa-hero-right h2,
+  .wa-contact-top h2 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+}
+
+/* планшеты / мелкие ноуты */
+@media (max-width: 1024px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 46px;
+    padding-inline: 4px;
+  }
+
+  .wa-section__inner {
+    max-width: min(960px, 94%);
+  }
+
+  .wp-block-columns {
+    column-gap: 24px;
+  }
+}
+
+/* телефоны */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  h2 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .wa-section {
+    padding-block: 24px 32px;
+    min-height: auto;
+  }
+}
+
+/* совсем узкие */
+@media (max-width: 480px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .site-header {
+    padding: 12px 0;
+  }
+
+  .site-header .header-inner {
+    padding: 0 16px;
+    gap: 20px;
+  }
+
+  .site-header .header-menu .main-nav {
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .site-header .header-menu .main-nav li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .site-header .header-inner {
+    gap: 12px;
+  }
+
+  .site-header .header-menu .main-nav {
+    gap: 16px;
+    row-gap: 6px;
+  }
+
+  .site-header .header-menu .main-nav li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header .header-inner {
+    padding: 0;
+    gap: 10px;
+  }
+}
+
+
+/* ==========================================================================
+   HERO + SLIDER
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .wa-hero-right h2 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .wa-hero-fold {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: 900px) {
+  .wa-section.wa-hero-fold {
+    min-height: auto;
+  }
+  
+  .swiper-navigation-icon {
+    width: 25px!important;
+    height: 25px!important;
+  }
+  
+  .swiper-button-prev {
+    left: -14px!important;
+    top: 45%!important;
+  }
+  
+  .swiper-button-next {
+    right: -14px!important;
+    top: 45%!important;
+  }
+
+  .wa-hero {
+    row-gap: 15px;
+  }
+
+  .wa-hero-left,
+  .wa-hero-right {
+    width: 100%;
+  }
+
+  .wa-hero-right h2 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .wa-hero-right .wp-block-buttons {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .wa-slider img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .wa-hero-right h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .wa-hero-right .wp-block-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .wa-hero-right .wp-block-buttons .wp-block-button {
+    width: 100%;
+  }
+}
+
+
+/* ==========================================================================
+   PRODUCT CARDS / ZIGZAG / FEATURE PANEL
+   ========================================================================== */
+
+/* product cards */
+@media (max-width: 900px) {
+  .wa-product-cards .wp-block-columns {
+    flex-direction: column;
+  }
+}
+
+/* zigzag */
+@media (max-width: 900px) {
+  .wa-zigzag .zigzag-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .wa-zigzag .zigzag-row.reverse {
+    flex-direction: column-reverse;
+  }
+
+  section.wa-section.wa-zigzag:not(.wa-hcards-wrapper) p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wa-zigzag .zigzag-row p {
+    padding: 0 12px !important;
+    font-size: 18px !important;
+    line-height: 24px;
+  }
+}
+
+/* feature panel */
+@media (max-width: 1024px) {
+  .wa-fp h2 {
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 900px) {
+  .wa-fp {
+    grid-template-columns: 1fr;
+  }
+
+  .wa-fp-right {
+    position: static;
+    top: auto;
+    height: auto;
+    align-self: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .wa-fp-right {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .wa-fp-title {
+    font-size: 22px;
+    line-height: 1.15;
+  }
+
+  .wa-fp-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ==========================================================================
+   WHO-FIT / WHY-PRO / REVIEWS / VIDEO
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .who-fit p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 640px) {
+  .who-fit p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .why-pro .specs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .why-pro .specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-pro .specs-grid h4 {
+    font-size: 18px;
+  }
+}
+
+/* reviews */
+@media (max-width: 900px) {
+  .reviews .wp-block-columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* video-cta */
+@media (max-width: 900px) {
+  .video-cta .wp-block-embed iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-cta .wp-block-embed.alignwide {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .video-cta h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .video-cta .wp-block-buttons {
+    justify-content: center;
+  }
+}
+
+
+/* ==========================================================================
+   CTA TEST COVER
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .cta-test__cover {
+    min-height: 320px;
+  }
+
+  .cta-test__cover .wp-block-cover__inner-container {
+    bottom: 40px;
+    left: 32px;
+    right: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-test__cover .wp-block-cover__inner-container {
+    left: 24px;
+    right: 24px;
+    bottom: 32px;
+    text-align: center;
+  }
+
+  .cta-test__title {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .cta-test__btn .wp-block-button__link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .cta-test__cover {
+    min-height: 215px;
+  }
+
+  .cta-test__cover .wp-block-cover__inner-container {
+    bottom: 10px;
+    left: 22px;
+    right: 32px;
+  }
+}
+
+
+/* ==========================================================================
+   CONTACT CTA
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .wa-contact-bottom > .wp-block-column:first-child,
+  .wa-contact-bottom > .wp-block-column:last-child {
+    flex-basis: 100% !important;
+  }
+
+  .wa-contact-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .wa-contact {
+    padding-block: 36px 48px;
+  }
+
+  .wa-contact-top,
+  .wa-contact-bottom {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .wa-contact-top h2 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .wa-contact-top p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .wa-contact-card {
+    border-radius: 24px;
+    min-height: 620px;
+  }
+
+  .wa-contact-card > div {
+    width: 85%;
+  }
+
+  .wa-contact-info {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+    .header-right{
+       display: none; 
+    }
+  .wa-contact {
+    padding-block: 32px 40px;
+  }
+
+  .wa-contact-top h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .wa-contact-top p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .wa-contact-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+    min-height: 0;
+  }
+
+  .wa-contact-kicker {
+    font-size: 22px;
+  }
+
+  .wa-contact-subtitle {
+    font-size: 16px;
+  }
+
+  .wa-contact-info a {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .wa-contact-info p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .wa-contact-small {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wa-contact-top h2 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .wa-contact-top p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .wa-contact-info a {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+
+/* ==========================================================================
+   HORIZONTAL CARDS
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .wa-hcards-inner {
+    position: relative;
+    top: auto;
+    overflow: visible;
+  }
+
+  .wa-hcards-track {
+    gap: 16px;
+    padding-inline: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .wa-hcards-item {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+    padding-inline: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wa-hcards-wrapper {
+    padding-block: 24px 32px;
+  }
+
+  .wa-hcards-item {
+    flex: 0 0 88%;
+  }
+}
+
+
+/* ==========================================================================
+   QUIZ (wa-quiz.css + questionaire)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .wa-quiz-dialog,
+  .wa-quiz-modal__dialog {
+    max-width: 100%;
+    margin: 0 12px;
+    border-radius: 16px;
+  }
+
+  .wa-quiz-header,
+  .wa-quiz-modal__header {
+    padding-inline: 18px;
+  }
+
+  .wa-quiz-body,
+  .wa-quiz {
+    padding: 16px 18px 18px;
+  }
+
+  .wa-quiz-footer,
+  .wa-quiz__footer {
+    padding: 12px 18px 18px;
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .wa-quiz-prev,
+  .wa-quiz-next,
+  .wa-quiz-btn {
+    width: 100%;
+  }
+
+  .wa-quiz-step-options {
+    grid-template-columns: 1fr;
+  }
+
+  .wa-quiz-option {
+    padding: 10px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wa-quiz-title,
+  .wa-quiz-modal__title {
+    font-size: 20px;
+  }
+
+  .wa-quiz-step-title {
+    font-size: 16px;
+  }
+
+  .wa-quiz-subtitle,
+  .wa-quiz-step-subtitle {
+    font-size: 13px;
+  }
+}
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .site-footer .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .site-footer .footer-col--contacts {
+    text-align: left;
+  }
+
+  .site-footer .footer-menu {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding-top: 20px;
+    padding-bottom: 14px;
+  }
+
+  .site-footer .footer-inner {
+    gap: 18px;
+  }
+
+  .site-footer .footer-col--brand,
+  .site-footer .footer-col--contacts {
+    max-width: 100%;
+  }
+
+  .site-footer .footer-bottom {
+    padding-inline: 16px;
+  }
+
+  .site-footer .footer-legal {
+    font-size: 11px;
+  }
+}
+
+
+/* ==========================================================================
+   MISC
+   ========================================================================== */
+
+/* общие колонки, чтобы не ломать */
+@media (max-width: 900px) {
+  .contact-cta .wp-block-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-main .wp-block-columns {
+    flex-direction: column;
+  }
+
+  .hero-main .wp-block-image {
+    max-width: 640px;
+    margin-inline: auto;
+  }
+}
+
+/* скролл-секции: не заставляем мобилки тянуть 100vh каждый блок */
+@media (max-width: 768px) {
+  .wa-section {
+    min-height: auto;
+  }
+}
+

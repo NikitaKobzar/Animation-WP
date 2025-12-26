@@ -1,0 +1,42 @@
+{
+  "apiVersion": 2,
+  "name": "wa/slider",
+  "title": "WA Слайдер картинок",
+  "category": "webalchemy",
+  "icon": "images-alt2",
+  "description": "Слайдер картинок для hero-секции",
+  "attributes": {
+    "ids": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "default": []
+    },
+    "animation": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "animTarget": { "type": "string", "default": "" },
+    "loop": {
+      "type": "boolean",
+      "default": true
+    },
+    "autoplay": {
+      "type": "number",
+      "default": 0
+    },
+    "speed": {
+      "type": "number",
+      "default": 600
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "wa-slider-editor"
+}

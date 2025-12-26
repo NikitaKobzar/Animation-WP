@@ -1,0 +1,8 @@
+@use '../variables' as *;
+
+.reviews{
+  h2{text-align:left; margin-bottom:16px;}
+  .wp-block-columns{align-items:flex-start;}
+  .wp-block-embed{margin-bottom:16px; border-radius:$radius; overflow:hidden; box-shadow:$shadow;}
+  .wp-block-image{margin-bottom:16px; img{border-radius:$radius; box-shadow:$shadow;}}
+}

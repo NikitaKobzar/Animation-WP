@@ -1,0 +1,24 @@
+{
+  "apiVersion": 2,
+  "name": "wa/feature-panel",
+  "title": "WA Feature Panel",
+  "icon": "columns",
+  "category": "layout",
+  "attributes": {
+    "rightTitle":  { "type": "string", "default": "300Мб/с" },
+    "rightSubtitle": { "type": "string", "default": "Швидкість" },
+    "rows": {
+      "type": "array",
+      "default": [
+        { "title": "Швидкість", "options": ["150Мб/с","300Мб/с","400Мб/с","600Мб/с","1 Гб/с","2 Гб/с"] },
+        { "title": "Одночасних користувачів по Wi-Fi", "options": ["10","15","20","32","64"] },
+        { "title": "Радіус роздачі по Wi-Fi", "options": ["15м","10м","20м","30м"] }
+      ]
+    },
+    "animation": { "type": "string", "default": "" },
+    "extraClass": { "type": "string", "default": "" },
+    "animTarget": { "type": "string", "default": "" }
+  },
+  "editorScript": "wa-feature-panel-editor",
+  "supports": { "html": false }
+}

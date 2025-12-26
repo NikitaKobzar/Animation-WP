@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+/* Header (минимум, накинешь своё меню) */
+.site-header{padding:18px 0;}
+.site-header .brand{font-weight:800; font-size:28px; color:var(--c-blue);}
+.site-main {
+    isolation:isolate;
+    width: 100%;
+}
+
+.wa-zigzag {
+    overflow-x: hidden;
+}

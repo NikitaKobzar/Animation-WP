@@ -1,0 +1,40 @@
+/* Стили для страницы 404 */
+
+.error-page {
+    padding: 120px 0;
+    text-align: center;
+
+    .error-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .error-code {
+        font-size: 100px;
+        font-weight: 900;
+        color: #ccc;
+    }
+
+    .error-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .error-message {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .error-btn {
+        @extend .button !optional;
+        background: #111;
+        padding: 14px;
+        color: #fff;
+
+        &:hover {
+            background: #333;
+        }
+    }
+}

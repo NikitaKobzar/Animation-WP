@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "wa/zigzag",
+  "title": "WA ZigZag",
+  "icon": "align-pull-left",
+  "category": "layout",
+  "attributes": {
+    "animation": { "type": "string", "default": "" },
+    "extraClass": { "type": "string", "default": "" },
+    "animTarget": { "type": "string", "default": "" }
+  },
+  "editorScript": "wa-zigzag-editor",
+  "supports": { "html": false }
+}

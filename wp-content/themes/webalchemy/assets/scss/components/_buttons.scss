@@ -1,0 +1,18 @@
+@use '../variables' as *;
+
+
+.wp-block-button .wp-block-button__link{
+  border-radius:$radius; padding:.95rem 1.5rem; font-weight:700; box-shadow:$shadow; transition:.2s;
+}
+.is-style-fill .wp-block-button__link{ background:var(--c-blue); color:#fff; }
+.is-style-fill .wp-block-button__link:hover{ background:var(--c-blue-2); transform:translateY(-1px); }
+
+.is-style-outline .wp-block-button__link{
+  background:#fff; color:var(--c-blue); border:2px solid var(--c-blue); box-shadow:none;
+}
+.is-style-outline .wp-block-button__link:hover{ background:var(--c-blue-soft); }
+
+.cta-test__btn .wp-block-button__link{
+  background:var(--c-orange); color:#111; border:none; box-shadow:$shadow;
+}
+.cta-test__btn .wp-block-button__link:hover{ filter:brightness(.95); transform:translateY(-1px); }

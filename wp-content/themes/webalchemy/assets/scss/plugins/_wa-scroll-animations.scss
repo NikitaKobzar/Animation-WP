@@ -1,0 +1,117 @@
+/* =========================
+   1) Reveal Children
+========================= */
+/* базовое состояние: скрыт */
+.wa-anim-reveal-child {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    transition:
+        opacity 0.5s ease-out var(--wa-anim-delay, 0ms),
+        transform 0.6s ease-out var(--wa-anim-delay, 0ms);
+}
+
+/* когда элемент вошёл в вьюпорт */
+.wa-anim-reveal-child.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* =========================
+   3) Horizontal Cards
+========================= */
+.wa-hcards-wrapper {
+    position: relative;
+
+    .wa-hcards-inner {
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+
+        .wa-hcards-track {
+            display: flex;
+            height: 100%;
+            will-change: transform;
+
+            .wa-hcards-item {
+                display: flex;
+                align-items: baseline;
+                justify-content: center;
+                padding: 1.5rem;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+
+  .wa-hcards-wrapper--slider .wa-hcards-track {
+    touch-action: pan-y; // даём управлять только JS
+  }
+  .wa-hcards-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wa-hcards-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wa-hcards-track {
+    display: flex;
+    align-items: stretch;
+    will-change: transform;
+    touch-action: pan-y;
+    
+    p {
+     font-size: 13px!important;
+     padding: 0!important;
+    }
+  }
+
+  .wa-hcards-item {
+    box-sizing: border-box;
+    padding: 0 12px!important;
+    display: flex;
+    align-items: stretch;
+    max-width: 320px;
+    
+    .zigzag-row {
+        min-height: 500px!important;
+    }
+  }
+
+  .wa-hcards-item > * {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  // для "колоды" можно дать overflow: visible, чтобы тени не резались
+  .wa-hcards-wrapper--stack {
+    overflow: visible;
+  }
+
+  .wa-hcards-wrapper--stack .wa-hcards-inner,
+  .wa-hcards-wrapper--stack .wa-hcards-track {
+    overflow: visible;
+  }
+
+  .wa-hcards-wrapper--stack .wa-hcards-track {
+    display: block;
+  }
+
+  .wa-hcards-wrapper--stack .wa-hcards-item {
+    padding: 0;
+  }
+}
+
+
+/* =========================
+   Parallax
+========================= */
+[data-wa-anim="parallax-soft"] {
+    position: relative;
+    overflow: hidden;
+}

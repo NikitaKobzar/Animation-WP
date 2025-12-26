@@ -1,0 +1,16 @@
+@use '../variables' as *;
+
+.video-cta{
+  h2{text-align:center; margin-bottom:16px;}
+  .wp-block-embed.alignwide{border-radius:$radius; overflow:hidden;}
+  .wp-block-buttons{margin-top:18px;}
+}
+.video-cta .wp-block-embed__wrapper{
+  text-align: center;
+}
+
+.video-cta .wp-block-embed iframe {
+  max-width: 100%;
+  width: 65%;
+  height: 410px;
+}

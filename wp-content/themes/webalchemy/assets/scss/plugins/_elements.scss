@@ -1,0 +1,615 @@
+/* ============================================================================================== Product cards ===== */
+.wa-product-cards {
+    .wp-block-columns {
+        gap: clamp(16px, 3vw, 32px);
+        margin-bottom: 0;
+    }
+
+    .wp-block-image img {
+        border-radius: 12px;
+    }
+
+    .wp-block-button__link {
+        border-radius: 10px;
+        padding: .9rem 1.2rem;
+    }
+}
+
+/* ===================================================================================================== ZigZag ===== */
+.wa-zigzag {
+    .zigzag-row {
+        align-items: center !important;
+        margin-bottom: 0;
+        gap: 0;
+
+        p {
+            padding: clamp(16px, 3vw, 32px);
+        }
+    }
+
+    .wp-block-image img {
+        border-radius: 12px;
+    }
+}
+
+/* ============================================================================================= Feature Panel ===== */
+.wa-fp {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(260px, 28vw, 420px);
+    gap: clamp(20px, 3vw, 40px);
+
+    &-left {
+        > * + * {
+            margin-top: clamp(10px, 1.5vw, 16px);
+        }
+    }
+
+    &-right {
+        background: #fff;
+        border: 1px solid var(--c-line, #e6e6e6);
+        border-radius: 16px;
+        padding: clamp(16px, 2.4vw, 24px);
+        position: relative;
+    }
+
+    &-header {
+        margin-bottom: clamp(16px, 2vw, 20px);
+        border-bottom: 1px solid var(--c-line, #eee);
+        padding-bottom: 12px;
+    }
+
+    &-title {
+        font-weight: 800;
+        font-size: clamp(22px, 2.4vw, 28px);
+        line-height: 1;
+    }
+
+    &-subtitle {
+        color: #666;
+        margin-top: 4px;
+        font-size: 0.95rem;
+    }
+
+    &-row {
+        margin-top: clamp(14px, 1.6vw, 18px);
+    }
+
+    &-row-title {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    &-options {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .wa-fp {
+        grid-template-columns: 1fr;
+
+        &-options {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .wa-fp-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.wa-opt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border: 1px solid #e3e6ef;
+    border-radius: 12px;
+    background: #fff;
+    font-weight: 600;
+    cursor: default;
+
+    &[aria-pressed="true"],
+    &:hover {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, .15);
+    }
+}
+
+/* ============================================================================================= HERO + SLIDER ===== */
+.wa-slider {
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 580px;
+        height: 550px;
+        display: block;
+        border-radius: 12px;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #000;
+        top: calc(50% - 22px);
+    }
+
+    .swiper-pagination-bullet {
+        background: #000;
+    }
+}
+
+.wa-section.wa-hero-fold {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.wa-hero {
+    width: 100%;
+    align-items: center;
+    column-gap: clamp(32px, 5vw, 64px);
+}
+
+.wa-hero-left {
+    border-radius: 32px;
+    overflow: hidden;
+
+    .wa-section__inner,
+    .wa-slider .wa-section__inner {
+        padding: 0;
+    }
+}
+
+.wa-hero-right {
+    h2 {
+        font-size: clamp(32px, 4vw, 44px);
+        margin-bottom: 16px;
+    }
+
+    .wp-block-buttons {
+        gap: 16px;
+        margin-top: 32px;
+    }
+}
+
+/* =============================================================================================== CONTACT CTA ===== */
+.wa-contact {
+    padding-block: clamp(40px, 8vw, 96px);
+
+    &-bottom {
+        > .wp-block-column:last-child {
+            flex-basis: calc(100% - 750px) !important;
+        }
+
+        > .wp-block-column:first-child {
+            flex-basis: 700px !important;
+        }
+    }
+
+    /* верхняя строка */
+    &-top {
+        align-items: flex-start;
+        margin-bottom: clamp(32px, 6vw, 56px);
+
+        h2 {
+            font-size: clamp(40px, 4.5vw, 64px);
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-size: clamp(16px, 1.2vw, 18px);
+        }
+    }
+
+    /* нижняя строка */
+    &-bottom {
+        align-items: stretch;
+        gap: clamp(32px, 4vw, 56px);
+    }
+
+    /* синяя карточка */
+    &-card {
+        background: url("/wp-content/uploads/2025/11/1-1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 32px;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        min-height: 545px;
+        display: flex;
+        align-items: end;
+        width: 700px;
+        justify-content: center;
+
+        &-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        input[type="tel"] {
+            width: 100%;
+            border-radius: 12px;
+            border: none;
+            padding: 16px 18px;
+            font-size: 16px;
+            line-height: 1.4;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            padding: 16px 18px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            background: #ff9800;
+            color: #fff;
+            transition: background .2s ease, transform .1s ease;
+
+            &:hover {
+                background: #ffb027;
+                transform: translateY(-1px);
+            }
+        }
+    }
+
+    &-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        p {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-kicker {
+        font-weight: 800;
+        font-size: clamp(26px, 3vw, 36px);
+        line-height: 1.1;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+    }
+
+    &-subtitle {
+        font-size: clamp(16px, 1.3vw, 18px);
+        margin: 0 0 24px;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 16px;
+        font-size: 16px;
+    }
+
+    &-logo {
+        max-width: 180px;
+    }
+
+    &-note {
+        font-weight: 600;
+    }
+
+    &-small {
+        font-size: 12px;
+        color: #777;
+        line-height: 1.4;
+    }
+}
+
+.wpcf7-spinner {
+    position: absolute;
+    top: -15px;
+    right: -50px;
+}
+
+@media (max-width: 900px) {
+    .wa-contact {
+        &-top,
+        &-bottom {
+            flex-direction: column;
+        }
+
+        &-card {
+            border-radius: 24px;
+            background: #0011ff;
+        }
+
+        &-info {
+            align-items: flex-start;
+        }
+    }
+    .wa-contact-fields p {
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .wa-contact {
+        &-card {
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        &-kicker {
+            font-size: 22px;
+        }
+    }
+}
+
+/* ========================================================================================= Scroll animations ===== */
+/* --- Fade-in/out, выезд из-за края экрана --- */
+.wa-anim-fade-up,
+.wa-anim-fade-down,
+.wa-anim-fade-left,
+.wa-anim-fade-right {
+    .wa-fade-item {
+        opacity: 0;
+        will-change: transform, opacity;
+        transition:
+            transform 0.9s cubic-bezier(.22, .61, .36, 1),
+            opacity   0.9s ease-out;
+    }
+}
+
+.wa-anim-fade-up {
+    .wa-fade-up {
+        transform: translate3d(0, 30vh, 0); // снизу вверх
+    }
+}
+
+.wa-anim-fade-down {
+    .wa-fade-down {
+        transform: translate3d(0, -30vh, 0); // сверху вниз
+    }
+}
+
+.wa-anim-fade-left {
+    .wa-fade-left {
+        transform: translate3d(-40vw, 0, 0); // слева направо
+    }
+}
+
+.wa-anim-fade-right {
+    .wa-fade-right {
+        transform: translate3d(40vw, 0, 0); // справа налево
+    }
+}
+
+.wa-anim-fade-up.wa-fade-active,
+.wa-anim-fade-down.wa-fade-active,
+.wa-anim-fade-left.wa-fade-active,
+.wa-anim-fade-right.wa-fade-active {
+    .wa-fade-item {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* --- Parallax --- */
+.wa-parallax-layer {
+    will-change: transform;
+}
+
+.wa-anim-parallax-soft {
+    .wa-parallax-layer {
+        transition: transform 0.2s ease-out;
+    }
+}
+
+/* ================================================================= */
+/* === Горизонтальные карточки (horizontal-cards) ================== */
+/* ================================================================= */
+.wa-hcards-wrapper {
+    position: relative;
+
+    .wa-hcards-inner {
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+
+        .wa-hcards-track {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            gap: 50px;
+            padding-inline: 25px;
+            will-change: transform;
+            transition: transform .25s ease-out;
+
+            .wa-hcards-item {
+                flex: 0 0 auto;
+                display: flex;
+                align-items: baseline;
+
+                > * {
+                    margin: 0 !important;
+                }
+
+                .wp-block-columns {
+                    width: auto;
+                    flex: 0 0 auto;
+                    display: flex;
+                    align-items: center;
+                    gap: 0;
+                    max-width: 500px;
+                    
+                    @media (max-width: 1024px) {
+                        max-width: 320px;
+                        padding: 20px;
+                    }
+                }
+
+                .zigzag-row {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    min-height: 675px;
+
+                    &.reverse {
+                        flex-direction: column-reverse;
+                    }
+                }
+
+                .wp-block-image {
+                    width: auto;
+                    max-width: 550px;
+                }
+
+                img {
+                    height: auto;
+                    width: 100%;
+                    display: block;
+                    border-radius: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .wa-hcards-track {
+        gap: 20px;
+        padding-inline: 16px;
+    }
+}
+
+/* ===== Benefits grid ===== */
+.wa-benefits {
+    padding-block: clamp(40px, 7vw, 80px);
+
+    &-grid {
+        > div {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: 1fr;
+            gap: clamp(16px, 2vw, 24px);
+        }
+    }
+}
+
+.wa-benefit {
+    background: #f8f9ff;
+    border-radius: 24px;
+    padding: clamp(20px, 2.4vw, 28px);
+    box-shadow: 0 24px 60px rgba(26, 44, 116, .06);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 24px;
+        background: #eef2ff;
+        margin-bottom: 8px;
+
+        &--delivery  {}
+        &--box       {}
+        &--trial     {}
+        &--services  {}
+        &--support   {}
+        &--kit       {}
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: clamp(20px, 1.6vw, 22px);
+        line-height: 1.2;
+        margin: 0 0 8px;
+    }
+
+    &__text {
+        margin: 0;
+        color: #555;
+        font-size: 0.98rem;
+    }
+
+    &--highlight {
+        grid-row: 1 / span 2;
+        grid-column: 3;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        gap: 24px;
+
+        .wa-benefit__icon,
+        .wa-benefit__body {
+            grid-column: 1;
+        }
+
+        .wa-benefit__image {
+            grid-row: 1 / span 2;
+            grid-column: 2;
+            border-radius: 24px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+.wa-benefits-cta {
+    margin-top: clamp(28px, 4vw, 40px);
+    justify-content: center;
+
+    .wp-block-button__link {
+        padding: 16px 32px;
+        border-radius: 999px;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 750px) {
+
+  /* Сетка — только один столбец */
+  .wa-benefits-grid > .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* можешь менять */
+  }
+
+  /* Большая карточка — обычная */
+  .wa-benefit--highlight {
+    display: flex;
+    flex-direction: column;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Скрываем картинку в большой карточке */
+  .wa-benefit--highlight .wa-benefit__image {
+    display: none !important;
+  }
+
+  /* Иконка + текст остаются нормальными */
+  .wa-benefit {
+    padding: 20px;
+  }
+
+  .wa-benefit__title {
+    font-size: 20px;
+  }
+
+  .wa-benefit__text {
+    font-size: 16px;
+  }
+}
+

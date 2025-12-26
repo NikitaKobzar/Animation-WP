@@ -1,0 +1,121 @@
+@use '../variables' as *;
+
+/* === Контейнер сетки === */
+.wa-benefits-grid > .wp-block-group__inner-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 32px);
+  margin-bottom: clamp(24px, 3vw, 40px);
+  max-width: $container;
+  margin: 0 auto;
+}
+
+/* === Карточка === */
+.wa-benefit {
+  margin: 0; /* убрать стандартные маргины груп */
+  position: relative;
+  padding: clamp(18px, 2vw, 28px);
+  border-radius: $radius;
+  box-shadow: $shadow;
+  background: var(--c-card);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 24px;
+    background: rgba(51, 102, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+
+    .wp-block-image {
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(18px, 1.6vw, 22px);
+    min-height: 70px;
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--c-muted);
+  }
+}
+
+/* === Большая правая карточка === */
+.wa-benefit--highlight {
+  position: relative;
+
+  .wa-benefit__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .wa-benefit__image {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      left: 0;
+    justify-self: end;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    
+
+    .wp-block-image {
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+/* === Кнопка под сеткой === */
+.wa-benefits-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(24px, 3vw, 40px);
+}
+
+/* === Адаптивы === */
+
+/* Мобила: одна колонка */
+@media (max-width: 743px) {
+  .wa-benefits-grid > .wp-block-group__inner-container {
+    grid-template-columns: 1fr;
+  }
+
+  .wa-benefit--highlight {
+    grid-template-columns: 1fr;
+
+    .wa-benefit__image {
+      display: none;
+    }
+  }
+}

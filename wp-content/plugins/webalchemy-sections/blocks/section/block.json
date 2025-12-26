@@ -1,0 +1,20 @@
+{
+  "apiVersion": 2,
+  "name": "wa/section",
+  "title": "WA Section",
+  "category": "layout",
+  "icon": "screenoptions",
+  "description": "Контейнер секции з анімацією та довільним вмістом.",
+  "attributes": {
+    "animation": { "type": "string", "default": "" },
+    "extraClass": { "type": "string", "default": "" },
+    "animTarget": { "type": "string", "default": "" }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true
+  },
+  "editorScript": "wa-sections-editor",
+  "style": []
+}
