@@ -1108,14 +1108,30 @@
                 sliderActive = true;
                 root.style.touchAction = 'none';
             }
-    
+
             if (e && e.cancelable && typeof e.preventDefault === 'function') {
                 e.preventDefault();
             }
-    
+
             const atFirst = (currentIndex === 0);
             const atLast  = (currentIndex === maxIndex);
-    
+
+            // Если уже на краю и пользователь тянет наружу — сразу отпускаем скролл.
+            const leavingSection = (atFirst && delta < 0) || (atLast && delta > 0);
+            if (sliderActive && leavingSection) {
+                sliderUnlocked         = true;
+                sliderActive           = false;
+                sectionCenteredMobile  = false;
+                deltaAccum             = 0;
+                gestureLocked          = false;
+                if (unlockTimer) {
+                    clearTimeout(unlockTimer);
+                    unlockTimer = null;
+                }
+                root.style.touchAction = originalTouchAction;
+                return; // отдаём нативный вертикальный скролл странице
+            }
+
             if (gestureLocked) {
                 // карточка уже перелистнута в рамках этого жеста — просто блокируем вертикаль
                 return;
